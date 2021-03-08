@@ -18,4 +18,9 @@ export const mapeoBody = data => data.map( data => {
 
     }
     return { ...result }
-}) 
+})
+
+/**
+ * Veo una gran mejora en estás dos funciones, se pueden re hacer en una sola,
+ * con mas tiempo lo puedo lograr.
+ */
