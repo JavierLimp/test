@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react'
+import React from 'react'
 
 import Table            from '@material-ui/core/Table';
 import TableHead        from '@material-ui/core/TableHead';
@@ -17,47 +17,46 @@ const ReactTable = props => {
 
     const headerTable = data => mapeoTable( data ).map( item => {
         const { props, id, component } = item
-        
+
         return ( <CreatorComponent  key = { id } component = { component } >
             { props }
-        </CreatorComponent> ) 
+        </CreatorComponent> )
     } )
 
-    const bodyTable = data => {
-        return mapeoBody( data ).map( ( item, idx ) => {
-            return (
-                <TableRow key={ idx }>
-                    { 
-                        Object.values( item ).map( ( itm, idx ) => {
-                            if( idx !== 3 ){
+    const bodyTable = data => mapeoBody( data ).map( ( item, idx ) => (
+        <TableRow key={ idx } >
+            {
+                Object.values( item ).map( ( itm, idx ) => {
+                    let html
+                    if( idx !== 3 ){
 
-                                return ( <CreatorComponent  key = { `${itm.id}-${idx}` } component = { itm.component } >
-                                    { itm.props }
-                                </CreatorComponent> )
-                            } else {
-                                return ( <CreatorComponent  key = { itm.id } component = { itm.component } 
-                                    src = { itm.props }>
-                                </CreatorComponent>  )
-                            }
-                            
-                        })
+                        html = ( <CreatorComponent  key = { `${itm.id}-${idx}` } component = { itm.component } >
+                            { itm.props }
+                        </CreatorComponent> )
+
+                    } else {
+
+                        html = ( <td key = { itm.id} ><CreatorComponent  key = { itm.id } component = { itm.component } src = { itm.props } /> </td> )
+
                     }
-                </TableRow>
-            )
-        })
-    }
+
+                    return html
+                })
+            }
+        </TableRow>
+    ))
 
   return (
       <Table>
 
-          <TableHead>
-            
+        <TableHead>
+
             <TableRow>
                 {
                    headerTable( HEADERS )
                 }
             </TableRow>
-        
+
         </TableHead>
 
         <TableBody>

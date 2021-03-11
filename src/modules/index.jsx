@@ -1,6 +1,6 @@
 import React, { Fragment, Component } from 'react'
 
-import ReactTable from '../controllers/table'
+import ReactPrincipal from '../controllers/componentPrincipal'
 
 import { getMethod } from '../functions/rest-api/index'
 
@@ -13,7 +13,7 @@ class Principal extends Component {
 
     async componentDidMount(){
         const { ok, response } = await getMethod( API_CONSTANTS.API );
-        
+
         if( ok ){
             this.setState({ dataTable : response })
         }
@@ -27,9 +27,11 @@ class Principal extends Component {
         }
         return(
             <Fragment>
-                <ReactTable
+
+                <ReactPrincipal
                     data = { dataTable }
                 />
+
             </Fragment>
         )
     }
