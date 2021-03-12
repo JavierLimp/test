@@ -47,7 +47,7 @@ const ReactTable = props => {
     ))
 
   return (
-      <Table>
+      <Table className = { props.className } >
 
         <TableHead>
 

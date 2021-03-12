@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 
 import Grid from '@material-ui/core/Grid';
 
 import ReactTable from '../table'
 import ReactCard  from '../card'
+import ReactPaper from '../paper'
 
 import useStyles from "./styles";
 
@@ -11,24 +12,30 @@ const ReactPrincipal = props => {
     const { data } = props
 
     const classes = useStyles();
-    console.log("classes.movi", classes.movil);
+
     return (
-        <Grid container spacing={3} className={classes.movil}>
+        <Fragment>
+            <ReactPaper>
+                <Grid container spacing={3} >
+                    <Grid item xs={12}>
 
-            <Grid item xs={12}>
+                        <ReactTable
+                            data      = { data }
+                            className = { classes.movil }
+                        />
 
-                <ReactTable
-                    data = { data }
-                />
+                    </Grid>
+                </Grid>
+                
+            </ReactPaper>
 
                 <ReactCard
-                    data = { data }
+                    data      = { data }
+                    className = { classes.tabletDeskton}
                 />
 
-            </Grid>
-
-        </Grid>
-  );
+        </Fragment>
+    );
 }
 
 export default ReactPrincipal
