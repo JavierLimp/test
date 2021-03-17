@@ -1,3 +1,5 @@
+/**
+ * NOTE: Se comenta está parte del código para que no lo marque Warinig
 const APPLICATION = 'application/json';
 
 const headers = {
@@ -10,3 +12,4 @@ export const GET = () => ( {
     mode    : 'cors',
     headers,
 } );
+ */

@@ -4,7 +4,7 @@ import { render } from 'react-dom'
 
 import { Provider } from 'react-redux'
 
-import App from './App'
+import App from './modules'
 
 import configureStore from './store/configureStore'
 
@@ -15,13 +15,13 @@ const store = configureStore( INITIAL_STATE_STORE )
 const renderApp = () =>
   render(
     <Provider store = { store } >
-      <App />
+      <App/>
     </Provider>,
     document.getElementById('root')
   )
 
 if ( module.hot ) {
-  module.hot.accept('./App', renderApp)
+  module.hot.accept('./modules', renderApp)
 }
 
 renderApp()

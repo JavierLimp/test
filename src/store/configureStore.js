@@ -1,30 +1,33 @@
 import { applyMiddleware, compose, createStore } from 'redux'
 
+import persistState from 'redux-localstorage'
+
 import thunk from 'redux-thunk'
 
 import { composeWithDevTools } from 'redux-devtools-extension'
 
-import monitorReducerEnhancer from './enhancers/monitorReducer'
+import reductor from './reducers'
 
-import ReducerGenenral from './reducers'
-
-const logger = store => next => async action => next( action )
+const LOGGER = store => next => action => next( action )
 
 export default function configureStore( preloadedState ) {
-  
-  const middlewares = [ logger, thunk ]
-  
+
+  const middlewares = [ thunk, LOGGER ]
+
   const middlewareEnhancer = applyMiddleware( ...middlewares )
 
-  const enhancers = [middlewareEnhancer, monitorReducerEnhancer]
-  
-  const composedEnhancers = composeWithDevTools( compose(...enhancers) )
+  const enhancer = persistState()
 
-  const store = createStore(ReducerGenenral, preloadedState, composedEnhancers)
+  const enhancers = [ middlewareEnhancer, enhancer ]
+
+  const composedEnhancers = composeWithDevTools( compose( ...enhancers ) )
+
+  const store = createStore( reductor, preloadedState, composedEnhancers )
 
   if ( module.hot ) {
-    module.hot.accept('./reducers', () => store.replaceReducer(ReducerGenenral))
+    module.hot.accept('./reducers', () => store.replaceReducer( reductor ) )
   }
 
   return store
 }
+
