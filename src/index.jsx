@@ -1,6 +1,27 @@
-import React    from 'react'
+import React from 'react'
+
 import { render } from 'react-dom'
 
-import App from './App'
+import { Provider } from 'react-redux'
 
-render( <App />, document.getElementById( 'root' ) )
+import App from './modules'
+
+import configureStore from './store/configureStore'
+
+import { INITIAL_STATE_STORE } from './store/state-store'
+
+const store = configureStore( INITIAL_STATE_STORE )
+
+const renderApp = () =>
+  render(
+    <Provider store = { store } >
+      <App/>
+    </Provider>,
+    document.getElementById('root')
+  )
+
+if ( module.hot ) {
+  module.hot.accept('./modules', renderApp)
+}
+
+renderApp()

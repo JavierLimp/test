@@ -1,30 +1,34 @@
 import React, { Fragment, Component } from 'react'
 
+import { connect } from "react-redux";
+
+import { bindActionCreators } from 'redux';
+
+import { actionData } from '../store/actions/actions-data'
+
 import ReactPrincipal from '../controllers/componentPrincipal'
 
 import { getMethod } from '../functions/rest-api/index'
 
 import { API_CONSTANTS } from '../constants/api'
-import { INITIAL_STATE } from '../constants/modules'
-
-class Principal extends Component {
-
-    state = INITIAL_STATE.STATE
+class App extends Component {
 
     async componentDidMount(){
-        const { ok, response } = await getMethod( API_CONSTANTS.API );
+        const { dataTable, actionData } = this.props
 
-        if( ok ){
-            this.setState({ dataTable : response })
+        if( dataTable.length === 0 ){
+            console.log("NO_ENTRA");
+            await getMethod( API_CONSTANTS.API, actionData )
         }
     }
 
     render(){
-        const { dataTable } = this.state
+        const { dataTable } = this.props
 
         if( dataTable.length === 0 ){
             return ( <div>{'Skeleton'}</div> )
         }
+
         return(
             <Fragment>
 
@@ -38,4 +42,8 @@ class Principal extends Component {
 
 }
 
-export default Principal
+const mapStateToProps = ({ dataTable }) => ( { dataTable } );
+
+const mapDispachToProps = dispatch => ( bindActionCreators( { actionData }, dispatch ) );
+
+export default connect( mapStateToProps, mapDispachToProps ) ( App );
