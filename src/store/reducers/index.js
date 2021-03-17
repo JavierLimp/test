@@ -1,13 +1,19 @@
-import { combineReducers } from "redux";
+import { ACTION_DATA } from '../../constants/store/actions'
 
-import ReducerGeneral from '../reducers/index'
+const ReducerGenenral = async ( state = {}, action = {} ) => {
+    let newState = state;
+    const { type, payload } = action;
+    console.log("TABLE-action", action );
+    
+    if( type === ACTION_DATA.SET_ACTION_DATA ){
+        console.log("TABLE-state", state );
+        console.log("TABLE-payload", payload );
 
-import ReducerTable from '../reducers/reducer-tabla'
+    }
 
-const reducersCombined = combineReducers( {
-    dataTable : ReducerTable
-} );
+    console.log("newState", newState );
 
-const ReductoresCombinados = ( state = {}, action = {} ) => ReducerGeneral( state, action, reducersCombined );
+    return newState
+}
 
-export default ReductoresCombinados
+export default ReducerGenenral

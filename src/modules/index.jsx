@@ -14,14 +14,16 @@ import { API_CONSTANTS } from '../constants/api'
 class Principal extends Component {
 
     async componentWillMount(){//componentDidMount(){
-        console.log("this.props", this.props);
+        //console.log("this.props", this.props);
         const { dataTable, actionData } = this.props
 
         if( dataTable.length === 0 ){
             const { ok, response } = await getMethod( API_CONSTANTS.API );
 
+            console.log("response",  response);
+
             if( ok ){
-                await actionData( response )
+                actionData( response )
             }
         }
     }
