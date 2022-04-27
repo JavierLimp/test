@@ -1,0 +1,99 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "nombre": "imagen...",
+      "zapatos": "84% poliester... %",
+      "categoria": "zapatos",
+      "precio": "342.97",
+      "cantidad": "30",
+      "inventario": "En stock"
+    },
+    {
+      "id": 2,
+      "nombre": "imagen...",
+      "zapatos": "84% poliester... %",
+      "categoria": "zapatos",
+      "precio": "342.97",
+      "cantidad": "30",
+      "inventario": "En stock"
+    },
+    {
+      "id": 3,
+      "nombre": "imagen...",
+      "zapatos": "84% poliester... %",
+      "categoria": "zapatos",
+      "precio": "342.97",
+      "cantidad": "30",
+      "inventario": "Limitado"
+    },
+    {
+      "id": 4,
+      "nombre": "imagen...",
+      "zapatos": "84% poliester... %",
+      "categoria": "zapatos",
+      "precio": "342.97",
+      "cantidad": "30",
+      "inventario": "Agotado"
+    },
+    {
+      "id": 5,
+      "nombre": "imagen...",
+      "zapatos": "84% poliester... %",
+      "categoria": "zapatos",
+      "precio": "342.97",
+      "cantidad": "30",
+      "inventario": "En stock"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "nombre": "imagen...",
+      "zapatos": "84% poliester... %",
+      "categoria": "zapatos",
+      "precio": "342.97",
+      "cantidad": "30",
+      "inventario": "En stock"
+    },
+    {
+      "id": 2,
+      "nombre": "imagen...",
+      "zapatos": "84% poliester... %",
+      "categoria": "zapatos",
+      "precio": "342.97",
+      "cantidad": "30",
+      "inventario": "En stock"
+    },
+    {
+      "id": 3,
+      "nombre": "imagen...",
+      "zapatos": "84% poliester... %",
+      "categoria": "zapatos",
+      "precio": "342.97",
+      "cantidad": "30",
+      "inventario": "Limitado"
+    },
+    {
+      "id": 4,
+      "nombre": "imagen...",
+      "zapatos": "84% poliester... %",
+      "categoria": "zapatos",
+      "precio": "342.97",
+      "cantidad": "30",
+      "inventario": "Agotado"
+    },
+    {
+      "id": 5,
+      "nombre": "imagen...",
+      "zapatos": "84% poliester... %",
+      "categoria": "zapatos",
+      "precio": "342.97",
+      "cantidad": "30",
+      "inventario": "En stock"
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}

@@ -1,0 +1,134 @@
+body{
+    margin: 0px !important;
+}
+
+#root {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    height:1080px;
+    width:100%;
+    background: linear-gradient( 180deg, black 50%, white 50% );
+}
+
+.header{
+    display: flex;
+    width:85% !important;
+    height: auto !important;
+    margin-left: 0px !important;
+    margin-top: 0px !important;
+    padding-left : 0px !important;
+}
+
+.headerMarca{
+    padding-left: 0px !important;
+}
+
+.hambuerguesa{
+   float: right;
+}
+
+.headerProductos{
+    width: 93% !important;
+    margin: auto !important;
+}
+
+.body{
+    height: auto;
+    width: 85%;
+    /* UI Properties */
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    box-shadow: 0px 3px 6px #00000029;
+    border-radius: 15px;
+    opacity: 1;
+
+    margin-top: 16px;
+}
+
+.table{
+    background: blue;
+    width: 90% !important;
+    margin: 0 auto;
+}
+
+.MuiTableHead-root{
+    background: #00000029;
+}
+
+.headerItems{
+    display: flex;
+    justify-content: end;
+}
+
+.floatComponentes{
+    float: right;
+}
+
+.pag{
+    display: flex;
+    justify-content: end;
+    padding: 15px;
+    width: 91% !important;
+    margin: auto !important;
+}
+
+.foto{ 
+    height: 386px;
+    width: 386px;
+    display: flex;
+    justify-content: center;
+    background: #DBDBDB;
+    align-items: center;
+}
+
+.actualizacion{
+    width: 95% !important;
+    margin: 79px 20px 79px 20px !important
+}
+
+.textField{
+    width: 100%;
+}
+
+.textoss{
+    width: 70%;
+    margin: auto;
+    margin-bottom: 20px;
+}
+
+.vacio{
+    height: 50px !important;
+    width: 100%;
+}
+
+.vacio2{
+    height: 70px !important;
+    width: 100%;
+}
+
+.centerPlus{
+    width: 0px;
+}
+
+.abajo{
+    top: 160px;
+}
+
+.sinCentrar{
+    margin: 0px;
+}
+
+.close{
+    display: flex !important;
+    justify-content: end !important;
+    margin-top: -75px !important;
+    margin-right: -22px !important;
+}
+
+.buttonn{
+    float: right;
+    margin-right: 43px;
+    border: solid 8px;
+    margin-top: 15px;
+}
